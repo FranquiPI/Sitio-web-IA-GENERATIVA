@@ -1,8 +1,8 @@
-const menu = document.getElementById('menu__btn')
-const nav = document.querySelector('.nav-bar')
+const menu_btn = document.getElementById('nav__btn')
+const nav = document.querySelector('.nav')
 
 
-menu.addEventListener('click', () =>{
+menu_btn.addEventListener('click', () =>{
     nav.classList.toggle('active');
     
     

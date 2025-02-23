@@ -25,7 +25,7 @@
         <nav class="nav">
 
             <ul class="nav__list">
-                <li class="nav__item"><a href="#inicio" class="nav-link active">INICIO</a></li>
+                <li class="nav__item"><a href="#inicio" class="nav-link">INICIO</a></li>
                 <li class="nav__item"><a href="#que-es" class="nav-link">QUÉ ES</a></li>
                 <li class="nav__item"><a href="#ia" class="nav-link">IA  GENERATIVA</a></li>
                 <li class="nav__item"><a href="#contacto" class="nav-link">CONTACTO</a></li>
@@ -110,7 +110,7 @@
                 La IA generativa utiliza modelos avanzados para crear automáticamente texto, imágenes, música y videos a partir de descripciones, impulsando la innovación creativa en diversas industrias.
             </p>
 
-            <div class="ia-generativa-container">
+            <div class="ia-generativa__wrapper">
 
                 <div class="ia-generativa-card">
                     <h3 class="title__h3">CHAT GPT</h3>
@@ -151,30 +151,27 @@
             </div>
         </section>
 
-        <section class="contacto" id="contacto">
-            <div class="contact-container">
-                <div class="contact-content">
-                    <div class="texto">
-                        <h2>Contacto</h2>
-                        <p>Déjanos tu mensaje para que nos pongamos en contacto contigo.</p>
-                    </div>
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Escribe tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Escribe tu e-mail" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Escribe tu teléfono (Opcional)">
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Escribe tu mensaje" required></textarea>
-                        </div>
-                        <button class="btn" type="submit">ENVIAR MENSAJE</button>
-                    </form>
+        <section class="section__contact" id="contacto">
+
+                <div class="contact__content">
+                    <h2 class="sub__title">Contacto</h2>
+                    <p>Déjanos tu mensaje para que nos pongamos en contacto contigo.</p>
                 </div>
-            </div>
+
+                    <form action="" class="contact__form">
+                        <label for="">Nombre Completo</label>
+                        <input type="text" id="nombre" placeholder="John Doe">
+                        
+                        <label for="">Email </label>
+                        <input type="email" name="" id="email" placeholder="johndoe@example.com">
+
+                        <label for="">Escribe tu mensaje</label>
+                        <textarea name="" id=""></textarea>
+
+                        <input type="submit" value="Enviar">
+                    </form>
+
+                
         </section>
         <footer class="footer">
             <p>&copy; 2024-BugBusters</p>
