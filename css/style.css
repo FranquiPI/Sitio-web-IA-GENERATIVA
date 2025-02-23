@@ -7,40 +7,56 @@
 }
 
 :root{
-  --color-fondo: #111;
+  --color-fondo: #010101;
   --color-texto-claro: #f5f5f5;
   --color-acento: #eefb03;
+  --color-acento-sombra: #effb0375;
+  --color-texto-oscuro: #111111;
+  --color-hover: #fbe603;
 }
 
 body {
   background-color: var(--color-fondo);
+  color: var(--color-texto-claro);
   font-family: "Montserrat", sans-serif;
 }
 
-/********* NAVBAR *********/
+a{
+  text-decoration: none;
+}
+
+/*------------ HEADER ----------*/
 
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
-}
-
-.logo {
-  display: flex;
   align-items: center;
+  padding: 0.5em;
+  background-color: var(--color-acento);
 }
 
-.logo img {
-  max-width: 100px;
-  margin-left: 60px;
+.header__logo{
+  max-width: 3em;
+  max-height: 3em;
 }
 
-.navbar-container {
+.header__logo img {
+  max-width: 100%;
+}
+
+.nav__btn{
+  max-width: 3em;
+  max-height: 3em;
+  font-size: 2em;
+  color: var(--color-texto-oscuro);
+}
+
+.nav {
+  display: none;
   margin-right: 20px;
 }
 
-.nav-bar {
-  display: flex;
+.nav__list {
   list-style: none;
 }
 
@@ -51,7 +67,6 @@ body {
 .nav-link {
   text-decoration: none;
   padding: 5px 10px;
-  color: white;
 }
 
 .nav-link:hover,
@@ -60,147 +75,148 @@ body {
   border-bottom: 2px solid #eefb03;
 }
 
-/********* SECCION INICIO *********/
-
-.inicio {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.inicio img {
-  max-width: 100%;
-  height: 37vw;
-  margin-right: 65px;
-}
-
-.info-container {
-  width: calc(100% - 40px);
-  max-width: 600px;
-  color: white;
-  padding: 20px;
-  margin: 20px auto;
-}
+/*------------- SECCION INICIO -----------*/
 
 h1 {
-  font-size: 4vw;
-  margin-bottom: 20px;
+  font-size: clamp(0.8em, 35px, 4em);
+  padding: 0;
+  margin: 0;
 }
 
-.info-container p {
-  font-size: 1.2vw;
-  margin: 20px 0px;
-  width: 25vw;
-}
-
-.btn {
-  background-color: #eefb03;
-  border: none;
-  width: 50%;
-  max-width: 250px;
-  height: 50px;
-  font-size: 1vw;
-  font-weight: bold;
-  border-radius: 50px;
-}
-
-.btn:hover {
-  cursor: pointer;
-  background-color: #fbe603;
-}
-/*
-i {
-  font-size: 30px;
-  color: #eefb03;
-  position: absolute;
-  top: 43vw;
-  left: 50vw;
-}
-*/
-/********* SECCIÓN IA GENERATIVA QUE ES *********/
-.que-es {
-  color: white;
+.home {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.que-es-container {
+.home__content {
+  width: 100%;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.home__content p {
+  width: inherit;
+  font-size: clamp(0.8em, 16px, 1.5em);
+  margin-top: 1em;
+}
+
+.home__img {
+  width: clamp(70%, 100px, 50%);
+}
+
+.home__img img {
+  width: 100%;
+}
+
+
+/*-----------BOTONES---------*/
+.button{
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
 }
 
-.info-ia-conteiner1 {
-  width: 40%;
-  margin: 50px;
+.button__item{
+  background-color: var(--color-acento);
+  width: clamp(100%, 50%, 20%);
+  height: 25px;
+  border-radius: 50px;
+  color: var(--color-texto-oscuro);
+  font-size: 1em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.info-ia-conteiner2 {
-  width: 40%;
-  margin: 50px;
+.button__item:hover{
+  background-color: var(--color-hover);
+  color: var(--color-texto-claro);
 }
 
-p,
-.listado > li {
-  color: #a6a6a6;
-  line-height: 25px;
-  font-size: 1.2vw;
-  width: 500px;
+/*------------BOTON ENDS ----------*/
+
+.home__arrow {
+  font-size: 30px;
+  color: var(--color-acento);
+  margin-top: 1.5em;
 }
 
-.ia-titulo {
-  font-size: 4vw;
+/*---------- SECCIÓN IA GENERATIVA QUE ES ----------*/
+.que__es {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.sub {
-  margin-top: 100px;
-  margin-left: 90px;
-  margin-bottom: 30px;
-  padding: 20px;
-  width: 50%;
-  font-size: 2vw;
-}
-
-.boton-verejemplos {
-  margin-top: 20px;
-}
-
-/********* SECCIÓN IA GENERATIVA EJEMPLOS *********/
-.ia-generativa h2 {
-  color: white;
+.sub__title {
+  margin-top: 4em;
   text-align: center;
-  font-size: 4vw;
-  margin-top: 100px;
-  padding: 20px;
+}
+
+.que__es-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: auto;
+  padding: 3em;
+  font-size: 0.8em;
+}
+
+.title__h3 {
+  font-size: 1.2em;
+  margin: 12px 0px;
+}
+
+.que__es-content p, .content--list{
+  line-height: 1.6em;
+}
+
+.content--list li {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+/*------------ SECCIÓN IA GENERATIVA EJEMPLOS ------------*/
+.ia-generativa{
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
 }
 
 .ia-generativa p {
-  text-align: center;
-  width: 1000px;
-  margin: 0 auto;
+  font-size: 0.8em;
+  margin: 20px;
 }
 
 .ia-generativa-container {
   display: flex;
-  justify-content: space-evenly;
-}
-
-.ia-generativa-container {
-  display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
 .ia-generativa-card {
   max-width: 430px;
   height: 470px;
-  margin-top: 20px;
+  margin: 20px;
   padding: 10px;
+  border: 1px solid var(--color-acento);
+  border-radius: 8px;
+  z-index: 20;
 }
 
-.ia-generativa-card h3 {
-  color: white;
+.ia-generativa-card:hover{
+  box-shadow: 5px 5px 90px var(--color-acento-sombra);
+  z-index: 10;
+}
+
+.ia-generativa-card .title__h3 {
   text-align: center;
   margin-top: 20px;
-  font-size: 2.5vw;
 }
 
 .logo-chatgpt {
@@ -230,11 +246,6 @@ p,
   display: block;
   margin: 0 auto;
 }
-
-a {
-  text-decoration: none;
-}
-
 /********* SECCIÓN CONTACTO *********/
 
 .contact-container {
@@ -304,39 +315,43 @@ a {
 }
 
 /*-------------- RESPONSIVE -------------*/
-
-@media screen and (max-width: 480px) {
+/*
+@media screen and (max-width: 720px) {
 
   .header {
-    background-color: #eefb03;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 2em 0em;
+    position: sticky;
+    z-index: 1000;
   }
 
   .menu__btn{
-    width: 1.5em;
-    height: 1.5em;
-    margin-left: auto;
-    z-index: 1000;
+    max-width: 1.5em;
+    max-height: 1.5em;
+    color: var(--color-acento);
+    margin-right: 1.5em;
+    cursor: pointer;
   }
   
-  .menu__btn span{
-    width: 1.5em;
-    height: 1.5em;
-    color: #111; 
+  .bi-list{
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
   }
 
-  .bi-list{
-    font-size: 1em;
+  .logo{
+    max-width: 1.5em;
+    max-height: 1.5em;
   }
 
   .logo img {
-    margin-left: 0px;
+    width: 100%;
   }
 
   .nav-bar{
-    background-color: var(--color-acento);
+    background-color: var(--color-fondo);
     max-width: 450px;
     width: 100%;
     height: 100dvh;
@@ -350,6 +365,7 @@ a {
     text-align: center;
     font-size: 2em;
     transition: .3s ease;
+    color: var(--color-fondo);
   }
 
   .nav-bar.active{
@@ -493,3 +509,4 @@ a {
     font-size: 3vw;
   }
 }
+*/
