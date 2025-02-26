@@ -1,9 +1,21 @@
-const menu_btn = document.getElementById('nav__btn')
-const nav = document.querySelector('.nav')
+document.addEventListener("DOMContentLoaded", () => {
+    const abrirMenu = document.getElementById('open-menu');
+    const cerrarMenu = document.getElementById('close-menu');
+    const nav = document.getElementById('nav');
+
+    abrirMenu.addEventListener('click', () => {
+        nav.classList.add('active');
+    });
+
+    cerrarMenu.addEventListener('click', () => {
+        nav.classList.remove('active');
+    });
 
 
-menu_btn.addEventListener('click', () =>{
-    nav.classList.toggle('active');
-    
-    
+    //cierra el menú al hacer clic en cualquier enlace del menú
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', ()=>{
+            nav.classList.remove('active');
+        });
+    });
 })

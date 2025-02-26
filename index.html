@@ -12,31 +12,34 @@
 </head>
 <body>
 
-    <header class="header" id="inicio">
+    <header class="header">
 
         <div class="header__logo">
             <a href="#"><img src="assets/logo.png" alt="logo de la página"></a>
         </div>
         
-        <div class="nav__btn" id="nav__btn">
-            <i class="bi bi-list"></i>
-        </div>
+        <nav class="header__nav" id="nav">
 
-        <nav class="nav">
-
+            <button class="nav__btn close-btn" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            
             <ul class="nav__list">
                 <li class="nav__item"><a href="#inicio" class="nav-link">INICIO</a></li>
                 <li class="nav__item"><a href="#que-es" class="nav-link">QUÉ ES</a></li>
                 <li class="nav__item"><a href="#ia" class="nav-link">IA  GENERATIVA</a></li>
                 <li class="nav__item"><a href="#contacto" class="nav-link">CONTACTO</a></li>
             </ul>
-
         </nav>
+
+        <button class="nav__btn open-menu" id="open-menu" aria-label="Abrir Menu">
+            <i class="bi bi-list"></i>
+        </button>
     </header>
 
     <main>
 
-        <section class="home">
+        <section class="home" id="inicio">
 
             <div class="home__content">
 
@@ -157,24 +160,25 @@
                     <h2 class="sub__title">Contacto</h2>
                     <p>Déjanos tu mensaje para que nos pongamos en contacto contigo.</p>
                 </div>
-
-                    <form action="" class="contact__form">
-                        <label for="">Nombre Completo</label>
-                        <input type="text" id="nombre" placeholder="John Doe">
+                    <fieldset>
+                        <legend>Contacto</legend>
+                    <form action="" class="contact__form" method="post">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre_completo" placeholder="John Doe">
                         
-                        <label for="">Email </label>
-                        <input type="email" name="" id="email" placeholder="johndoe@example.com">
+                        <label for="email">Email </label>
+                        <input type="email" name="user_email" id="email" placeholder="johndoe@example.com">
 
-                        <label for="">Escribe tu mensaje</label>
-                        <textarea name="" id=""></textarea>
+                        <label for="mensaje">Escribe tu mensaje</label>
+                        <textarea name="user__mensaje" id="mensaje"></textarea>
 
                         <input type="submit" value="Enviar">
                     </form>
-
+                    </fieldset>
                 
         </section>
         <footer class="footer">
-            <p>&copy; 2024-BugBusters</p>
+            <p>&copy; 2025 - <strong>FRANCO PIZARRO</strong></p>
         </footer>
 
 

@@ -10,9 +10,10 @@
   --color-fondo: #010101;
   --color-texto-claro: #f5f5f5;
   --color-acento: #eefb03;
-  --color-acento-sombra: #effb0375;
+  --color-acento-sombra: #effb0326;
   --color-texto-oscuro: #111111;
   --color-hover: #fbe603;
+  --color-sombra-oscuro: #00000079;
 }
 
 body {
@@ -28,73 +29,85 @@ a{
 /*------------ HEADER ----------*/
 
 .header {
-  min-height: 3em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5em;
-  background-color: var(--color-acento);
   position: sticky;
   top: 0;
+  background-color: var(--color-fondo);
   z-index: 1000;
 }
 
+/*Estilo del logo*/
 .header__logo{
   max-width: 3em;
   max-height: 3em;
+  margin: 10px;
 }
 
 .header__logo img {
   max-width: 100%;
 }
 
-.nav__btn{
-  max-width: 3em;
-  max-height: 3em;
-  font-size: 2em;
-  color: var(--color-texto-oscuro);
+/*Estilo del nav*/
+
+.header__nav{
+  background-color: var(--color-fondo);
+  max-width: 400px;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  font-size: 1em;
+  transition: right .3s ease;
+  color: var(--color-fondo);
+  padding: 2em;
+  gap: 1em;
+  box-shadow: -2px 0 5px var(--color-texto-oscuro);
+}
+
+.header__nav.active{
+  right: 0;
 }
 
 .nav__list {
   list-style: none;
+  padding: 0;
+  width: 100%;
 }
 
-.nav__item {
-  padding: 20px;
+.nav__item{
+  margin: 1.4em 0;
 }
 
 .nav-link {
-  color: var(--color-texto-claro);
   text-decoration: none;
+  color: var(--color-texto-claro);
   padding: 5px 10px;
+  transition: color 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: #eefb03;
-  border-bottom: 2px solid #eefb03;
+.nav-link:hover {
+  color: var(--color-hover);
 }
 
-.nav{
-  background-color: var(--color-fondo);
-  max-width: 450px;
-  width: 100%;
-  height: 100dvh;
-  position: fixed;
-  top: 0;
-  right: -450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 1em;
-  transition: .3s ease;
-  color: var(--color-fondo);
+.nav__btn{
+  font-size: 2em;
+  margin: 10px;
+  background: none;
+  cursor: pointer;
+  color: var(--color-acento);
+  border: none;
 }
 
-.nav.active{
-  right: 0;
+.close-btn{
+  align-self: flex-end;
 }
 
 /*------------- SECCION INICIO -----------*/
@@ -219,15 +232,20 @@ h1 {
 .ia-generativa__wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .ia-generativa-card {
-  max-width: 430px;
-  height: 470px;
+  max-width: 20em; /*320px*/
+  height: 30em; /*480px*/
   margin: 20px;
   padding: 10px;
   border: 1px solid var(--color-acento);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .ia-generativa-card:hover{
@@ -262,16 +280,11 @@ h1 {
   margin-bottom: 35px;
 }
 
-.ia-generativa-card button {
-  display: block;
-  margin: 0 auto;
-}
-
-
 /*----------- SECCIÓN CONTACTO -----------*/
 .section__contact{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .contact__content {
@@ -286,10 +299,11 @@ h1 {
 }
 
 .contact__form {
-  width: 100%;
+  width: clamp(50%, 24em, 100%);
   display: flex;
   flex-direction: column;
   padding: 25px;
+  margin: auto;
 }
 
 .contact__form label{
@@ -297,22 +311,49 @@ h1 {
 }
 
 .contact__form input, textarea {
+  width: 100%;
   background-color: transparent;
   border: none;
-  border-left: 2px solid var(--color-acento);
+  border-left: 3px solid var(--color-acento);
   padding: 1em;
+  resize: none;
+  color: var(--color-texto-claro);
 }
 
-.contact__form:is(input:focus, form:focus){
+.contact__form input[type=submit]{
+  border: none;
+  background-color: var(--color-acento);
+  color: var(--color-texto-oscuro);
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 2em;
+}
+
+.contact__form input:focus, textarea:focus{
+  border-color: none;
   outline: none;
+}
+
+fieldset {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  padding: 0 20px;
+  border-radius: 10px;
+}
+
+legend{
+  padding: 0 20px;
+  font-size: 1.2em;
 }
 
 /* Estilos para el footer */
 .footer {
+  display: flex;
   width: 100%;
   padding: 20px 0;
-  color: #ffffff;
   border-top: 1px solid #545454;
+  margin-top: 30px;
 }
 
 .footer p {
@@ -320,7 +361,7 @@ h1 {
   width: 100%;
   text-align: center;
   margin: 0;
-  font-size: 14px;
+  font-size: 1em;
 }
 
 /*-------------- RESPONSIVE -------------*/
