@@ -29,6 +29,7 @@ a{
 /*------------ HEADER ----------*/
 
 .header {
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,9 +81,12 @@ a{
   list-style: none;
   padding: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav__item{
+  display: flex;
   margin: 1.4em 0;
 }
 
@@ -130,6 +134,8 @@ h1 {
   width: 100%;
   padding: 20px;
   margin: 20px auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .home__content p {
@@ -139,7 +145,7 @@ h1 {
 }
 
 .home__img {
-  width: clamp(70%, 100px, 50%);
+  width: clamp(15em, 100px, 50%);
 }
 
 .home__img img {
@@ -154,11 +160,12 @@ h1 {
   justify-content: center;
   align-items: center;
   margin: 20px 0px;
+  height: 40px;
 }
 
 .button__item{
   background-color: var(--color-acento);
-  width: clamp(100%, 50%, 20%);
+  width: clamp(10em, 50%, 20%);
   height: 25px;
   border-radius: 50px;
   color: var(--color-texto-oscuro);
@@ -226,7 +233,7 @@ h1 {
 
 .ia-generativa p {
   font-size: 0.8em;
-  margin: 20px;
+  padding: 20px;
 }
 
 .ia-generativa__wrapper {
@@ -335,7 +342,7 @@ h1 {
 }
 
 fieldset {
-  width: 80%;
+  width: clamp(10em, 500px, 20em);
   display: flex;
   margin: auto;
   padding: 0 20px;
@@ -365,178 +372,58 @@ legend{
 }
 
 /*-------------- RESPONSIVE -------------*/
-/*
-@media screen and (max-width: 720px) {
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2em 0em;
-    position: sticky;
-    z-index: 1000;
-  }
-
-  .menu__btn{
-    max-width: 1.5em;
-    max-height: 1.5em;
-    color: var(--color-acento);
-    margin-right: 1.5em;
-    cursor: pointer;
-  }
-  
-  .bi-list{
-    width: 100%;
-    height: 100%;
-    font-size: 1.5em;
-  }
-
-  .logo{
-    max-width: 1.5em;
-    max-height: 1.5em;
-  }
-
-  .logo img {
-    width: 100%;
-  }
-
-
-
-  .nav-item {
-    padding: 10px;
-  }
-
-  .nav-link {
-    text-align: center;
-    font-size: 2.9vw;
-  }
-
-  .inicio img {
-    display: none;
-  }
-
-  .info-container{
-    margin-top: 100px;
-  }
-
-  h1 {
-    font-size: 6vw;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .info-container p {
-    font-size: 4vw;
-    width: 100%;
-    text-align: center;
-  }
-
-  .btn {
-    font-size: 3vw;
-    display: block;
-    margin: 40px auto;
-  }
-
-  i {
-    top: 170vw;
-    margin: 0 auto;
-  }
-
-  .que-es {
+@media screen and (min-width: 480px) and (max-width: 1080px){
+  .button{
     justify-content: center;
     align-items: center;
   }
+
   
-  .que-es-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .info-ia-conteiner1, .info-ia-conteiner2 {
-    width: 100%;
-    padding: 5px;
-    margin: 10px auto 20px;
-  }
-  
-  p,
-  .listado > li {
-    font-size: 4vw;
-    width: 90%;
-    margin: 0px;
-    padding: 0px;
-    margin: 0 auto;
-  }
-  
-  .ia-titulo {
-    font-size: 6vw;
-    margin-bottom: 15px;
+
+  .home__content h1, p{
     text-align: center;
-  }
-  
-  .sub {
-    margin: 200px 0px 0px;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    font-size: 4vw;
-  }
-  
-  .boton-verejemplos {
-    display: none;
-  }
-
-  .ia-generativa h2 {
-    font-size: 7vw;
-  }
-
-  .ia-generativa p {
-    width: 90%;
-    font-size: 3.5vw;
-  }
-
-  .ia-generativa-container {
-    display: flex;
-    flex-direction: column;
+    justify-items: center;
     align-items: center;
+    
   }
-
-  .ia-generativa-container {
-    display: flex;
-    align-items: center;
-  }
-
-  .ia-generativa-card {
-    max-width: 430px;
-    height: 470px;
-    margin-top: 20px;
-    padding: 10px;
-  }
-
-  .ia-generativa-card h3 {
-    font-size: 5vw;
-  }
-
-  .contact-container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 50px 0;
-    margin-top: 30px;
-  }
-
-  .contact-content {
-    width: 90%;
-    max-width: 600px;
+  
+  .ia-generativa>p{
     text-align: center;
-  }
-
-  .contact-content h2 {
-    font-size: 9vw;
-    margin-bottom: 10px;
-  }
-
-  .contact-content p {
-    font-size: 3vw;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
   }
 }
-*/
+
+@media screen and (min-width:1081px){
+  .header__nav{
+    display: block;
+    position: static;
+    height: auto;
+    max-width: auto;
+    padding: 0;
+    margin-right: 120px;
+  }
+
+  .nav__list{
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    gap: 20px;
+    padding: 0;
+    padding-right: 40px;
+
+  }
+
+  .nav__item{
+    width: auto;
+    margin: 0;
+  }
+  
+  .nav__btn{
+    display: none;
+  }
+}
